@@ -105,7 +105,7 @@ resource "aws_key_pair" "main" {
 }
 
 resource "local_file" "main" {
-  content         = tls_private_key.main.private_key_pem
+  content         = tls_private_key.main.private_key_openssh
   filename        = "${path.module}/cnd-handson-key.pem"
   file_permission = "0600"
 }
